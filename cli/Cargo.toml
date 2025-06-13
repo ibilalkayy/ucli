@@ -5,3 +5,4 @@ version.workspace = true
 
 [dependencies]
 clap.workspace = true
+domains = {path = "../domains"}
