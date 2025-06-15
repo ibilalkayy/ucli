@@ -11,7 +11,7 @@ pub struct ParseFlags {
     #[clap(short, long, value_name = "FILE")]
     pub output: Option<String>,
 
-    /// Output format (default: json)
+    /// Give the output format
     #[clap(short, long, value_name = "json", default_value = "json")]
     pub format: Format,
 

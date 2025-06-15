@@ -1,3 +1,15 @@
+pub mod init {
+    pub struct InitData {
+        pub directory: String,
+        pub your_template: String,
+    }
+
+    pub fn init_options(data: InitData) {
+        println!("{}", data.directory);
+        println!("{}", data.your_template);
+    }
+}
+
 pub mod parses {
     use clap::ValueEnum;
 
