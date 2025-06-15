@@ -1,4 +1,5 @@
 use clap::Parser;
+use domains::watch::Format;
 
 #[derive(Debug, Parser)]
 pub struct WatchFlags {
@@ -10,14 +11,14 @@ pub struct WatchFlags {
     #[clap(short = 'c', long, value_name = "COMMAND")]
     pub on_change: String,
 
-    /// Output format (json, html, etc)
+    /// Give the output format
     #[clap(
         short,
         long,
         value_name = "json | html | plaintext | markdown",
         default_value = "json"
     )]
-    pub format: String,
+    pub format: Format,
 
     /// Output path for the generated file
     #[clap(short, long, value_name = "OUTPUT")]

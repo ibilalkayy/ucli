@@ -6,9 +6,11 @@ use clap::Parser;
 
 use domains::{
     init::{InitData, init_options},
+    lint::{LintData, lint_options},
     parse::{ParseFiles, parse_options},
     render::{RenderFiles, render_options},
     validate::{ValidateFile, validate_options},
+    watch::{WatchFiles, watch_options},
 };
 
 fn main() {
@@ -36,7 +38,14 @@ fn main() {
             r.format,
         ),
         Command::Validate(v) => validate_options(ValidateFile { input: v.input }),
-        Command::Watch(_) => todo!(),
-        Command::Lint(_) => todo!(),
+        Command::Watch(w) => watch_options(
+            WatchFiles {
+                path: w.path,
+                on_change: w.on_change,
+                output: w.output,
+            },
+            w.format,
+        ),
+        Command::Lint(l) => lint_options(LintData { input: l.input }),
     }
 }

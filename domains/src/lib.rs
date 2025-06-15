@@ -82,5 +82,45 @@ pub mod validate {
         println!("{}", file_type.input);
     }
 }
-pub mod watch {}
-pub mod lint {}
+
+pub mod watch {
+    use clap::ValueEnum;
+
+    pub struct WatchFiles {
+        pub path: String,
+        pub on_change: String,
+        pub output: Option<String>,
+    }
+
+    #[derive(Debug, Clone, ValueEnum)]
+    pub enum Format {
+        Json,
+        Html,
+        Plaintext,
+        Markdown,
+    }
+
+    pub fn watch_options(watch_file: WatchFiles, format: Format) {
+        println!("{}", watch_file.path);
+        if let Some(file) = watch_file.output {
+            println!("{}", file);
+        }
+        println!("{}", watch_file.on_change);
+
+        match format {
+            Format::Json => println!("Json is selected"),
+            Format::Html => println!("HTML is selected"),
+            Format::Plaintext => println!("Plaintext is selected"),
+            Format::Markdown => println!("Markdown is selected"),
+        }
+    }
+}
+pub mod lint {
+    pub struct LintData {
+        pub input: String,
+    }
+
+    pub fn lint_options(data: LintData) {
+        println!("{}", data.input);
+    }
+}
