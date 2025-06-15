@@ -10,15 +10,12 @@ pub mod init {
     }
 }
 
-pub mod parses {
+pub mod parse {
     use clap::ValueEnum;
 
-    pub struct Input {
-        pub file: String,
-    }
-
-    pub struct Output {
-        pub file: Option<String>,
+    pub struct ParseFiles {
+        pub input_file: String,
+        pub output_file: Option<String>,
     }
 
     #[derive(Debug, Clone, ValueEnum)]
@@ -29,9 +26,9 @@ pub mod parses {
         Markdown,
     }
 
-    pub fn parse_options(input: Input, output: Output, format: Format) {
-        println!("{}", input.file);
-        if let Some(file) = output.file {
+    pub fn parse_options(file_type: ParseFiles, format: Format) {
+        println!("{}", file_type.input_file);
+        if let Some(file) = file_type.output_file {
             println!("{}", file);
         }
         match format {
@@ -42,3 +39,48 @@ pub mod parses {
         }
     }
 }
+
+pub mod render {
+    use clap::ValueEnum;
+
+    pub struct RenderFiles {
+        pub input_file: String,
+        pub output_file: Option<String>,
+        pub template_data: String,
+    }
+
+    #[derive(Debug, Clone, ValueEnum)]
+    pub enum Format {
+        Json,
+        Html,
+        Plaintext,
+        Markdown,
+    }
+
+    pub fn render_options(file_type: RenderFiles, format: Format) {
+        println!("{}", file_type.input_file);
+        if let Some(file) = file_type.output_file {
+            println!("{}", file);
+        }
+        println!("{}", file_type.template_data);
+
+        match format {
+            Format::Json => println!("Json is selected"),
+            Format::Html => println!("HTML is selected"),
+            Format::Plaintext => println!("Plaintext is selected"),
+            Format::Markdown => println!("Markdown is selected"),
+        }
+    }
+}
+
+pub mod validate {
+    pub struct ValidateFile {
+        pub input: String,
+    }
+
+    pub fn validate_options(file_type: ValidateFile) {
+        println!("{}", file_type.input);
+    }
+}
+pub mod watch {}
+pub mod lint {}

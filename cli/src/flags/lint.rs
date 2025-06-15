@@ -4,7 +4,7 @@ use clap::Parser;
 pub struct LintFlags {
     /// DSL file to lint
     #[clap(short, long, value_name = "FILE")]
-    input: String,
+    pub input: String,
 
     /// Enable on strict mode (fail on unknow syntax)
     #[clap(long)]

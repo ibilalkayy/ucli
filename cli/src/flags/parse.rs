@@ -1,5 +1,5 @@
 use clap::Parser;
-use domains::parses::Format;
+use domains::parse::Format;
 
 #[derive(Debug, Parser)]
 pub struct ParseFlags {
@@ -12,7 +12,12 @@ pub struct ParseFlags {
     pub output: Option<String>,
 
     /// Give the output format
-    #[clap(short, long, value_name = "json", default_value = "json")]
+    #[clap(
+        short,
+        long,
+        default_value = "json",
+        value_name = "json | html | plaintext | markdown"
+    )]
     pub format: Format,
 
     /// Treat unknown syntax as an error

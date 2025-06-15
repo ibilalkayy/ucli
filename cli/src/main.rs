@@ -6,7 +6,9 @@ use clap::Parser;
 
 use domains::{
     init::{InitData, init_options},
-    parses::{Input, Output, parse_options},
+    parse::{ParseFiles, parse_options},
+    render::{RenderFiles, render_options},
+    validate::{ValidateFile, validate_options},
 };
 
 fn main() {
@@ -18,11 +20,22 @@ fn main() {
                 your_template: i.template,
             });
         }
-        Command::Parse(p) => {
-            parse_options(Input { file: p.input }, Output { file: p.output }, p.format)
-        }
-        Command::Render(_) => todo!(),
-        Command::Validate(_) => todo!(),
+        Command::Parse(p) => parse_options(
+            ParseFiles {
+                input_file: p.input,
+                output_file: p.output,
+            },
+            p.format,
+        ),
+        Command::Render(r) => render_options(
+            RenderFiles {
+                input_file: r.input,
+                output_file: r.output,
+                template_data: r.template,
+            },
+            r.format,
+        ),
+        Command::Validate(v) => validate_options(ValidateFile { input: v.input }),
         Command::Watch(_) => todo!(),
         Command::Lint(_) => todo!(),
     }
