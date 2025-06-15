@@ -1,4 +1,5 @@
 use clap::Parser;
+use domains::parses::Format;
 
 #[derive(Debug, Parser)]
 pub struct ParseFlags {
@@ -6,12 +7,13 @@ pub struct ParseFlags {
     #[clap(short, long, value_name = "FILE")]
     pub input: String,
 
-    // /// Output file (optional)
-    // #[clap(short, long, value_name = "FILE")]
-    // pub output: Option<String>,
+    /// Output file (optional)
+    #[clap(short, long, value_name = "FILE")]
+    pub output: Option<String>,
+
     /// Output format (default: json)
-    #[clap(short, long, value_name = "json | debug")]
-    pub format: String,
+    #[clap(short, long, value_name = "json", default_value = "json")]
+    pub format: Format,
 
     /// Treat unknown syntax as an error
     #[clap(long)]
