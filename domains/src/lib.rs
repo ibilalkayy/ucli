@@ -4,9 +4,11 @@ pub mod init {
         pub your_template: String,
     }
 
-    pub fn init_options(data: InitData) {
-        println!("{}", data.directory);
-        println!("{}", data.your_template);
+    impl InitData {
+        pub fn init_options(&self) {
+            println!("{}", self.directory);
+            println!("{}", self.your_template);
+        }
     }
 }
 
@@ -26,16 +28,19 @@ pub mod parse {
         Markdown,
     }
 
-    pub fn parse_options(file_type: ParseFiles, format: Format) {
-        println!("{}", file_type.input_file);
-        if let Some(file) = file_type.output_file {
-            println!("{}", file);
-        }
-        match format {
-            Format::Json => println!("Json is selected"),
-            Format::Html => println!("HTML is selected"),
-            Format::Plaintext => println!("Plaintext is selected"),
-            Format::Markdown => println!("Markdown is selected"),
+    impl ParseFiles {
+        pub fn parse_options(&self, format: Format) {
+            println!("{}", self.input_file);
+            if let Some(ref file) = self.output_file {
+                println!("{}", file);
+            }
+
+            match format {
+                Format::Json => println!("Json is selected"),
+                Format::Html => println!("HTML is selected"),
+                Format::Plaintext => println!("Plaintext is selected"),
+                Format::Markdown => println!("Markdown is selected"),
+            }
         }
     }
 }
@@ -57,18 +62,20 @@ pub mod render {
         Markdown,
     }
 
-    pub fn render_options(file_type: RenderFiles, format: Format) {
-        println!("{}", file_type.input_file);
-        if let Some(file) = file_type.output_file {
-            println!("{}", file);
-        }
-        println!("{}", file_type.template_data);
+    impl RenderFiles {
+        pub fn render_options(&self, format: Format) {
+            println!("{}", self.input_file);
+            if let Some(ref file) = self.output_file {
+                println!("{}", file);
+            }
+            println!("{}", self.template_data);
 
-        match format {
-            Format::Json => println!("Json is selected"),
-            Format::Html => println!("HTML is selected"),
-            Format::Plaintext => println!("Plaintext is selected"),
-            Format::Markdown => println!("Markdown is selected"),
+            match format {
+                Format::Json => println!("Json is selected"),
+                Format::Html => println!("HTML is selected"),
+                Format::Plaintext => println!("Plaintext is selected"),
+                Format::Markdown => println!("Markdown is selected"),
+            }
         }
     }
 }
@@ -78,8 +85,10 @@ pub mod validate {
         pub input: String,
     }
 
-    pub fn validate_options(file_type: ValidateFile) {
-        println!("{}", file_type.input);
+    impl ValidateFile {
+        pub fn validate_options(&self) {
+            println!("{}", self.input);
+        }
     }
 }
 
@@ -100,18 +109,20 @@ pub mod watch {
         Markdown,
     }
 
-    pub fn watch_options(watch_file: WatchFiles, format: Format) {
-        println!("{}", watch_file.path);
-        if let Some(file) = watch_file.output {
-            println!("{}", file);
-        }
-        println!("{}", watch_file.on_change);
+    impl WatchFiles {
+        pub fn watch_options(&self, format: Format) {
+            println!("{}", self.path);
+            if let Some(ref file) = self.output {
+                println!("{}", file);
+            }
+            println!("{}", self.on_change);
 
-        match format {
-            Format::Json => println!("Json is selected"),
-            Format::Html => println!("HTML is selected"),
-            Format::Plaintext => println!("Plaintext is selected"),
-            Format::Markdown => println!("Markdown is selected"),
+            match format {
+                Format::Json => println!("Json is selected"),
+                Format::Html => println!("HTML is selected"),
+                Format::Plaintext => println!("Plaintext is selected"),
+                Format::Markdown => println!("Markdown is selected"),
+            }
         }
     }
 }
@@ -120,7 +131,9 @@ pub mod lint {
         pub input: String,
     }
 
-    pub fn lint_options(data: LintData) {
-        println!("{}", data.input);
+    impl LintData {
+        pub fn lint_options(&self) {
+            println!("{}", self.input);
+        }
     }
 }
