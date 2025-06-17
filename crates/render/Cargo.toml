@@ -1,5 +1,5 @@
 [package]
-name = "domains"
+name = "render"
 edition = "2024"
 version.workspace = true
 

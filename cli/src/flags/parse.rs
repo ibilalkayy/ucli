@@ -1,5 +1,5 @@
 use clap::Parser;
-use domains::parse::Format;
+use parse::parse::Format;
 
 #[derive(Debug, Parser)]
 pub struct ParseFlags {

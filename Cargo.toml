@@ -1,9 +1,9 @@
 [workspace]
 resolver = "3"
-members = ["cli", "domains"]
+members = ["cli", "crates/*"]
 
 [workspace.dependencies]
 clap = { version = "4.5.39", features = ["derive"] }
 
 [workspace.package]
-version = "0.1.8"
+version = "0.1.9"

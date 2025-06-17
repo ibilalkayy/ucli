@@ -1,5 +1,5 @@
 use clap::Parser;
-use domains::render::Format;
+use render::render::Format;
 
 #[derive(Debug, Parser)]
 pub struct RenderFlags {

@@ -4,10 +4,12 @@ pub mod flags;
 use crate::command::command::{Command, Dsl};
 use clap::Parser;
 
-use domains::{
-    init::InitData, lint::LintData, parse::ParseFiles, render::RenderFiles, validate::ValidateFile,
-    watch::WatchFiles,
-};
+use init::init::InitData;
+use lint::lint::LintData;
+use parse::parse::ParseFiles;
+use render::render::RenderFiles;
+use validate::validate::ValidateFile;
+use watch::watch::WatchFiles;
 
 fn main() {
     let dsl = Dsl::parse();

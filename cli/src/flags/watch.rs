@@ -1,5 +1,5 @@
 use clap::Parser;
-use domains::watch::Format;
+use watch::watch::Format;
 
 #[derive(Debug, Parser)]
 pub struct WatchFlags {

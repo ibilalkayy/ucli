@@ -1,0 +1,6 @@
+[package]
+name = "lint"
+edition = "2024"
+version.workspace = true
+
+[dependencies]

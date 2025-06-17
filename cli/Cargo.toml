@@ -5,4 +5,9 @@ version.workspace = true
 
 [dependencies]
 clap.workspace = true
-domains = {path = "../domains"}
+init = { path = "../crates/init" }
+parse = { path = "../crates/parse" }
+render = { path = "../crates/render" }
+validate = { path = "../crates/validate" }
+watch = { path = "../crates/watch" }
+lint = { path = "../crates/lint" }
