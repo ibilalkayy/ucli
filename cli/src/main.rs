@@ -4,58 +4,57 @@ pub mod flags;
 use crate::command::command::{Command, Dsl};
 use clap::Parser;
 
+use convert::convert::ConvertData;
+use example::example::ExampleData;
+use highlight::highlight::HighlightData;
 use init::init::InitData;
-use lint::lint::LintData;
-use parse::parse::ParseFiles;
-use render::render::RenderFiles;
-use validate::validate::ValidateFile;
-use watch::watch::WatchFiles;
+use parse::parse::ParseData;
+use validate::validate::ValidateData;
 
-fn main() {
+fn handle_commands() {
     let dsl = Dsl::parse();
     match dsl.command {
         Command::Init(i) => {
-            let init_data = InitData {
-                directory: i.dir,
-                your_template: i.template,
-            };
+            let init_data = InitData { your_path: i.path };
             init_data.init_options();
         }
 
-        Command::Parse(p) => {
-            let parse_data = ParseFiles {
-                input_file: p.input,
-                output_file: p.output,
-            };
-            parse_data.parse_options(p.format);
-        }
-
-        Command::Render(r) => {
-            let render_data = RenderFiles {
-                input_file: r.input,
-                output_file: r.output,
-                template_data: r.template,
-            };
-            render_data.render_options(r.format);
-        }
-
         Command::Validate(v) => {
-            let validate_data = ValidateFile { input: v.input };
+            let validate_data = ValidateData { file: v.file };
             validate_data.validate_options();
         }
 
-        Command::Watch(w) => {
-            let watch_data = WatchFiles {
-                path: w.path,
-                on_change: w.on_change,
-                output: w.output,
+        Command::Parse(p) => {
+            let parse_data = ParseData {
+                input_file: p.file,
+                output_file: p.output,
             };
-            watch_data.watch_options(w.format);
+            parse_data.parse_options();
         }
 
-        Command::Lint(l) => {
-            let lint_data = LintData { input: l.input };
-            lint_data.lint_options();
+        Command::Convert(c) => {
+            let convert_data = ConvertData {
+                file: c.file,
+                output: c.output,
+            };
+            convert_data.convert_options(c.to);
+        }
+
+        Command::Highlight(h) => {
+            let highlight_data = HighlightData {
+                file: h.file,
+                theme: h.theme,
+            };
+            highlight_data.highlight_options();
+        }
+
+        Command::Example(e) => {
+            let example_data = ExampleData { path: e.path };
+            example_data.example_options();
         }
     }
+}
+
+fn main() {
+    handle_commands();
 }

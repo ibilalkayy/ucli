@@ -1,7 +1,6 @@
 [package]
-name = "render"
+name = "highlight"
 edition = "2024"
 version.workspace = true
 
 [dependencies]
-clap.workspace = true

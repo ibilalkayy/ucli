@@ -1,6 +1,6 @@
 use crate::flags::{
-    init::InitFlags, lint::LintFlags, parse::ParseFlags, render::RenderFlags,
-    validate::ValidateFlags, watch::WatchFlags,
+    convert::ConvertFlags, example::ExampleFlags, highlight::HighlightFlags, init::InitFlags,
+    parse::ParseFlags, validate::ValidateFlags,
 };
 use clap::{Parser, Subcommand};
 
@@ -17,21 +17,21 @@ pub struct Dsl {
 
 #[derive(Debug, Subcommand)]
 pub enum Command {
-    /// Generate a starter file
+    /// Creates a new file with a basic template to help you get started.
     Init(InitFlags),
 
-    /// Parse and print DSL
-    Parse(ParseFlags),
-
-    /// Render DSL to HTML or other files
-    Render(RenderFlags),
-
-    /// Check if DSL file has a valid syntax
+    /// Checks the file for errors or incorrect syntax.
     Validate(ValidateFlags),
 
-    /// Watch the file
-    Watch(WatchFlags),
+    /// Parses the file and displays its underlying structure.
+    Parse(ParseFlags),
 
-    /// Analyze the file data to detect errors
-    Lint(LintFlags),
+    /// Converts the file into another format (e.g. HTML, JSON).
+    Convert(ConvertFlags),
+
+    /// Displays the file in color for easier reading in the terminal.
+    Highlight(HighlightFlags),
+
+    /// Generates a demo file to quickly see how the language looks.
+    Example(ExampleFlags),
 }

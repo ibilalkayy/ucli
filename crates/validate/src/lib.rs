@@ -1,11 +1,11 @@
 pub mod validate {
-    pub struct ValidateFile {
-        pub input: String,
+    pub struct ValidateData {
+        pub file: String,
     }
 
-    impl ValidateFile {
+    impl ValidateData {
         pub fn validate_options(&self) {
-            println!("{}", self.input);
+            println!("{}", self.file);
         }
     }
 }

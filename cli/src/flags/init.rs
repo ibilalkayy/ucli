@@ -2,15 +2,11 @@ use clap::Parser;
 
 #[derive(Debug, Parser)]
 pub struct InitFlags {
-    /// Create a new project in this directory
-    #[clap(short, long, value_name = "DIR", default_value = ".")]
-    pub dir: String,
+    /// Path to create the file
+    #[clap(short, long, value_name = "PATH", default_value = ".")]
+    pub path: Option<String>,
 
-    /// Example template to use
-    #[clap(short, long, value_name = "TEMPLATE", default_value = "basic")]
-    pub template: String,
-
-    /// Overwrite existing files if present
+    /// Overwrite if file exists
     #[clap(long)]
     pub force: bool,
 }

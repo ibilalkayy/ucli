@@ -4,13 +4,13 @@ use clap::Parser;
 pub struct ValidateFlags {
     /// File to validate
     #[clap(short, long, value_name = "FILE")]
-    pub input: String,
+    pub file: String,
 
-    /// Output errors as JSON (useful in CI)
-    #[clap(long)]
-    pub json: bool,
-
-    /// Enable strict validation
+    /// Setup the stricter validation
     #[clap(long)]
     pub strict: bool,
+
+    /// Show details of checks
+    #[clap(long)]
+    pub verbose: bool,
 }

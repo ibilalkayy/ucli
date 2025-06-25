@@ -1,13 +1,13 @@
 pub mod init {
     pub struct InitData {
-        pub directory: String,
-        pub your_template: String,
+        pub your_path: Option<String>,
     }
 
     impl InitData {
         pub fn init_options(&self) {
-            println!("{}", self.directory);
-            println!("{}", self.your_template);
+            if let Some(path) = &self.your_path {
+                println!("Here is the path: {}", path);
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 [package]
-name = "lint"
+name = "example"
 edition = "2024"
 version.workspace = true
 
