@@ -15,7 +15,10 @@ fn handle_commands() {
     let dsl = Dsl::parse();
     match dsl.command {
         Command::Init(i) => {
-            let init_data = InitData { your_path: i.path };
+            let init_data = InitData {
+                your_path: i.path,
+                force: i.force,
+            };
             init_data.init_options();
         }
 
