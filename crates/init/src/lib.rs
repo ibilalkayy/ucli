@@ -37,3 +37,49 @@ pub mod init {
         }
     }
 }
+
+#[cfg(test)]
+mod init_tests {
+    use crate::init::InitData;
+    use std::fs;
+
+    #[test]
+    fn test_create_file_force_false() {
+        let path = "first.txt".to_string();
+
+        let _ = fs::remove_file(&path);
+
+        let data = InitData {
+            your_path: Some(path.clone()),
+            force: false,
+        };
+
+        data.init_options();
+
+        assert!(std::path::Path::new(&path).exists());
+
+        let content = fs::read_to_string(&path).unwrap();
+        assert_eq!(content, "Hello World");
+
+        fs::remove_file(&path).unwrap();
+    }
+
+    #[test]
+    fn test_create_file_force_true() {
+        let path = "file.txt".to_string();
+
+        fs::write(&path, "Hello bye").unwrap();
+
+        let data = InitData {
+            your_path: Some(path.clone()),
+            force: true,
+        };
+
+        data.init_options();
+
+        let content = fs::read_to_string(&path).unwrap();
+        assert_eq!(content, "world");
+
+        fs::remove_file(&path).unwrap();
+    }
+}
