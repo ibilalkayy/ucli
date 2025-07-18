@@ -9,6 +9,7 @@ use example::example::ExampleData;
 use highlight::highlight::HighlightData;
 use init::init::InitData;
 use parse::parse::ParseData;
+use rules::rules::rules_option;
 use validate::validate::ValidateData;
 
 fn handle_commands() {
@@ -54,6 +55,10 @@ fn handle_commands() {
         Command::Example(e) => {
             let example_data = ExampleData { path: e.path };
             example_data.example_options();
+        }
+
+        Command::Rules => {
+            rules_option();
         }
     }
 }

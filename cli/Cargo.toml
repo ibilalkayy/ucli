@@ -11,3 +11,4 @@ parse = { path = "../crates/parse" }
 convert = { path = "../crates/convert" }
 highlight = { path = "../crates/highlight" }
 example = { path = "../crates/example" }
+rules = { path = "../crates/rules" }

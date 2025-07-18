@@ -1,8 +1,6 @@
 [package]
-name = "init"
+name = "rules"
 edition = "2024"
 version.workspace = true
 
 [dependencies]
-clap.workspace = true
-regex.workspace = true

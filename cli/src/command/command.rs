@@ -34,4 +34,6 @@ pub enum Command {
 
     /// Generates a demo file to quickly see how the language looks.
     Example(ExampleFlags),
+
+    Rules,
 }

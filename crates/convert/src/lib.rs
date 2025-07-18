@@ -20,9 +20,9 @@ pub mod convert {
             println!("Input file: {}", self.file);
 
             match format {
-                TargetFormat::Json => println!("Json is selected"),
+                TargetFormat::Json => println!("JSON is selected"),
                 TargetFormat::Html => println!("HTML is selected"),
-                TargetFormat::Toml => println!("Toml is selected"),
+                TargetFormat::Toml => println!("TOML is selected"),
                 TargetFormat::Plaintext => println!("Plaintext is selected"),
                 TargetFormat::Markdown => println!("Markdown is selected"),
             }
