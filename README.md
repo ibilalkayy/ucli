@@ -1,30 +1,55 @@
-# 🛠️ DSL — A Simple Custom Language
+Here's your updated `README.md` tailored for **Ucli**, based on the structure and guidance you've provided:
+
+---
+
+# 🧰 Ucli — Minimalist Unix Command-Line Tools in Rust
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
-A command-line tool to **parse**, **render**, **lint**, and **work with a custom domain-specific language (DSL)**. Ideal for learning how parsers work and transforming custom text-based formats into structured outputs like JSON, HTML, or Markdown.
+**Ucli** is a collection of simple, fast, and safe Unix command-line tools reimagined in Rust. Perfect for learning systems programming, handling files, and working with text streams using modern tools.
 
-> 🚀 Built in Rust — fast, safe, and fun!
+> 🚀 Built in Rust — blazing fast, memory-safe, and beginner-friendly!
 
-## 📦 Features
+---
 
-- 🔍 `parse` — Convert DSL files into JSON or debug formats
-- 🖼️ `render` — Render DSL content to HTML, plaintext, or Markdown
-- 🧹 `lint` — Check DSL syntax and report common issues
-- 🔁 `watch` — Watch files for changes and auto-parse/render
-- 🛠️ `init` — Scaffold a starter DSL project
-- ✅ `validate` — Validate DSL syntax (CI/CD-friendly)
-- 🧪 `test` — Run tests on DSL files against expected outputs
-- 📤 `export` — Export your DSL's schema/spec
+## 📦 Available Commands
 
-### 🦀 From Source
+| Command | Description                              |
+| ------- | ---------------------------------------- |
+| `cat`   | Output contents of a file line-by-line   |
+| `ls`    | List directory contents                  |
+| `grep`  | Search for matching lines in a file      |
+| `view`  | View file content interactively (`less`) |
+| `sort`  | Sort lines in a file                     |
+| `tail`  | Show the last N lines of a file          |
+| `wc`    | Count lines, words, and bytes in a file  |
+
+### 🔧 Example Usages
 
 ```bash
-git clone https://github.com/ibilalkayy/dsl
-cd dsl
+ucli cat file.txt
+ucli ls -a
+ucli grep "error" logs.txt -i -n
+ucli tail logs.txt -n 10 -f
+ucli wc file.txt -l -w -c
+```
+
+Each command supports relevant flags similar to classic Unix tools.
+
+---
+
+## 🦀 Build from Source
+
+```bash
+git clone https://github.com/ibilalkayy/ucli
+cd ucli
 cargo build --release
 ```
 
+This will generate a `ucli` binary in `target/release/ucli`.
+
+---
+
 ## 🙌 Contributing
 
-Contributions are welcome! Open an issue or PR with ideas, improvements, or bug fixes.
+Contributions are welcome! Feel free to open issues, suggest new features, or submit pull requests. Help make Ucli a better learning and productivity tool for everyone.
