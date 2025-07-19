@@ -1,14 +1,14 @@
 [package]
-name = "dsl"
+name = "ucli"
 edition = "2024"
 version.workspace = true
 
 [dependencies]
 clap.workspace = true
-init = { path = "../crates/init" }
-validate = { path = "../crates/validate" }
-parse = { path = "../crates/parse" }
-convert = { path = "../crates/convert" }
-highlight = { path = "../crates/highlight" }
-example = { path = "../crates/example" }
-rules = { path = "../crates/rules" }
+cat = { path = "../crates/cat" }
+ls = { path = "../crates/ls" }
+grep = { path = "../crates/grep" }
+sort = { path = "../crates/sort" }
+tail = { path = "../crates/tail" }
+view = { path = "../crates/view" }
+wc = { path = "../crates/wc" }

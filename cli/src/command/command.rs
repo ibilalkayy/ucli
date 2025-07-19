@@ -1,6 +1,6 @@
 use crate::flags::{
-    convert::ConvertFlags, example::ExampleFlags, highlight::HighlightFlags, init::InitFlags,
-    parse::ParseFlags, validate::ValidateFlags,
+    cat::CatFlags, grep::GrepFlags, ls::ListFlags, sort::SortFlags, tail::TailFlags,
+    view::ViewFlags, wc::WcFlags,
 };
 use clap::{Parser, Subcommand};
 
@@ -8,32 +8,33 @@ use clap::{Parser, Subcommand};
 #[clap(
     author = "Bilal Khan",
     version,
-    about = "DSL is a Rust-based CLI tool for parsing, validating, and rendering your own custom domain-specific language."
+    about = "A collection of minimalist Unix command-line tools reimagined in Rust."
 )]
-pub struct Dsl {
+pub struct Ucli {
     #[clap(subcommand)]
     pub command: Command,
 }
 
 #[derive(Debug, Subcommand)]
 pub enum Command {
-    /// Creates a new file with a basic template to help you get started.
-    Init(InitFlags),
+    /// Output contents of a file line-by-line
+    Cat(CatFlags),
 
-    /// Checks the file for errors or incorrect syntax.
-    Validate(ValidateFlags),
+    /// List all the directory contents
+    Ls(ListFlags),
 
-    /// Parses the file and displays its underlying structure.
-    Parse(ParseFlags),
+    /// Search for the matching lines
+    Grep(GrepFlags),
 
-    /// Converts the file into another format (e.g. HTML, JSON).
-    Convert(ConvertFlags),
+    /// View the file content interactively
+    View(ViewFlags),
 
-    /// Displays the file in color for easier reading in the terminal.
-    Highlight(HighlightFlags),
+    /// Sort the lines
+    Sort(SortFlags),
 
-    /// Generates a demo file to quickly see how the language looks.
-    Example(ExampleFlags),
+    /// Last N lines of a file
+    Tail(TailFlags),
 
-    Rules,
+    /// Count lines, words, bytes
+    Wc(WcFlags),
 }

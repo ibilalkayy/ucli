@@ -1,64 +1,60 @@
 pub mod command;
 pub mod flags;
 
-use crate::command::command::{Command, Dsl};
+use crate::command::command::{Command, Ucli};
 use clap::Parser;
 
-use convert::convert::ConvertData;
-use example::example::ExampleData;
-use highlight::highlight::HighlightData;
-use init::init::InitData;
-use parse::parse::ParseData;
-use rules::rules::rules_option;
-use validate::validate::ValidateData;
+use cat::cat::CatData;
+use grep::grep::GrepData;
+use ls::list::ListData;
+use sort::sort::SortData;
+use tail::tail::TailData;
+use view::view::ViewData;
+use wc::wc::WcData;
 
 fn handle_commands() {
-    let dsl = Dsl::parse();
-    match dsl.command {
-        Command::Init(i) => {
-            let init_data = InitData {
-                your_path: i.path,
-                force: i.force,
+    let ucli = Ucli::parse();
+    match ucli.command {
+        Command::Cat(i) => {
+            let cat_data = CatData {
+                path: i.path,
+                number: i.number,
             };
-            init_data.init_options();
+            cat_data.cat_options();
         }
 
-        Command::Validate(v) => {
-            let validate_data = ValidateData { file: v.file };
-            validate_data.validate_options();
+        Command::Ls(l) => {
+            let list_data = ListData { path: l.path };
+            list_data.list_options();
         }
 
-        Command::Parse(p) => {
-            let parse_data = ParseData {
-                input_file: p.file,
-                output_file: p.output,
+        Command::Grep(g) => {
+            let grep_data = GrepData {
+                case_insensitive: g.case_insensitive,
+                invert: g.invert,
+                numbers: g.numbers,
             };
-            parse_data.parse_options();
+            grep_data.grep_options();
         }
 
-        Command::Convert(c) => {
-            let convert_data = ConvertData {
-                file: c.file,
-                output: c.output,
-            };
-            convert_data.convert_options(c.to);
+        Command::View(v) => {
+            let view_data = ViewData { file: v.file };
+            view_data.view_options();
         }
 
-        Command::Highlight(h) => {
-            let highlight_data = HighlightData {
-                file: h.file,
-                theme: h.theme,
-            };
-            highlight_data.highlight_options();
+        Command::Sort(s) => {
+            let sort_data = SortData { file: s.file };
+            sort_data.sort_options();
         }
 
-        Command::Example(e) => {
-            let example_data = ExampleData { path: e.path };
-            example_data.example_options();
+        Command::Tail(t) => {
+            let tail_data = TailData { path: t.file };
+            tail_data.tail_options();
         }
 
-        Command::Rules => {
-            rules_option();
+        Command::Wc(w) => {
+            let wc_data = WcData { file: w.file };
+            wc_data.wc_options();
         }
     }
 }

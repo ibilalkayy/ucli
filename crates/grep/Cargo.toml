@@ -1,0 +1,6 @@
+[package]
+name = "grep"
+edition = "2024"
+version.workspace = true
+
+[dependencies]

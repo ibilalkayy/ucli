@@ -1,6 +1,7 @@
-pub mod convert;
-pub mod example;
-pub mod highlight;
-pub mod init;
-pub mod parse;
-pub mod validate;
+pub mod cat;
+pub mod grep;
+pub mod ls;
+pub mod sort;
+pub mod tail;
+pub mod view;
+pub mod wc;

@@ -1,8 +1,0 @@
-[package]
-name = "init"
-edition = "2024"
-version.workspace = true
-
-[dependencies]
-clap.workspace = true
-regex.workspace = true

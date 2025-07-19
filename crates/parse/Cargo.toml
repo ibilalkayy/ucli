@@ -1,7 +1,0 @@
-[package]
-name = "parse"
-edition = "2024"
-version.workspace = true
-
-[dependencies]
-clap.workspace = true

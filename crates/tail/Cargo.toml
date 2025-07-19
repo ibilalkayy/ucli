@@ -1,0 +1,6 @@
+[package]
+name = "tail"
+edition = "2024"
+version.workspace = true
+
+[dependencies]
