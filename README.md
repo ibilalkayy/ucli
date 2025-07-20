@@ -1,7 +1,3 @@
-Here's your updated `README.md` tailored for **Ucli**, based on the structure and guidance you've provided:
-
----
-
 # 🧰 Ucli — Minimalist Unix Command-Line Tools in Rust
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
