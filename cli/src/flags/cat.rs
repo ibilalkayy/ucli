@@ -6,7 +6,7 @@ pub struct CatFlags {
     #[clap(short, long, value_name = "PATH", default_value = ".")]
     pub path: Option<String>,
 
-    /// Number of lines
+    /// Line numbers to be added
     #[clap(short, long)]
     pub number: Option<u32>,
 }
