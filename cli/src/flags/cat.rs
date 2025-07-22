@@ -8,5 +8,5 @@ pub struct CatFlags {
 
     /// Line numbers to be added
     #[clap(short, long)]
-    pub number: Option<u32>,
+    pub number: bool,
 }
