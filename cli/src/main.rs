@@ -30,9 +30,11 @@ fn handle_commands() {
 
         Command::Grep(g) => {
             let grep_data = GrepData {
+                file: g.file,
+                pattern: g.pattern,
                 case_insensitive: g.case_insensitive,
                 invert: g.invert,
-                numbers: g.numbers,
+                number: g.number,
             };
             grep_data.grep_options();
         }
