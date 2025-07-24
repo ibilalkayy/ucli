@@ -54,7 +54,7 @@ dependencies = [
 
 [[package]]
 name = "cat"
-version = "0.1.15"
+version = "0.1.16"
 
 [[package]]
 name = "clap"
@@ -104,7 +104,7 @@ checksum = "b05b61dc5112cbb17e4b6cd61790d9845d13888356391624cbe7e41efeac1e75"
 
 [[package]]
 name = "grep"
-version = "0.1.15"
+version = "0.1.16"
 
 [[package]]
 name = "heck"
@@ -120,7 +120,7 @@ checksum = "7943c866cc5cd64cbc25b2e01621d07fa8eb2a1a23160ee81ce38704e97b8ecf"
 
 [[package]]
 name = "ls"
-version = "0.1.15"
+version = "0.1.16"
 
 [[package]]
 name = "once_cell_polyfill"
@@ -148,7 +148,7 @@ dependencies = [
 
 [[package]]
 name = "sort"
-version = "0.1.15"
+version = "0.1.16"
 
 [[package]]
 name = "strsim"
@@ -169,11 +169,11 @@ dependencies = [
 
 [[package]]
 name = "tail"
-version = "0.1.15"
+version = "0.1.16"
 
 [[package]]
 name = "ucli"
-version = "0.1.15"
+version = "0.1.16"
 dependencies = [
  "cat",
  "clap",
@@ -199,11 +199,11 @@ checksum = "06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821"
 
 [[package]]
 name = "view"
-version = "0.1.15"
+version = "0.1.16"
 
 [[package]]
 name = "wc"
-version = "0.1.15"
+version = "0.1.16"
 
 [[package]]
 name = "windows-sys"
