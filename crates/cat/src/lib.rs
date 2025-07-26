@@ -43,7 +43,7 @@ mod cat_tests {
 
     #[test]
     fn test_read_file_num_false() {
-        let file_path = PathBuf::from("test_file.txt");
+        let file_path = PathBuf::from("cat_file.txt");
 
         let mut file = File::create(&file_path).expect("Err: failed to create a file");
         file.write_all("Line 1\nLine 2".as_bytes())
