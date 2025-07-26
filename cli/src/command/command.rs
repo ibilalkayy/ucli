@@ -20,7 +20,7 @@ pub enum Command {
     /// Output contents of a file line-by-line
     Cat(CatFlags),
 
-    /// List all the directory contents
+    /// List all the directory files
     Ls(ListFlags),
 
     /// Search for the matching lines

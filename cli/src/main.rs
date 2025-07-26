@@ -24,7 +24,11 @@ fn handle_commands() {
         }
 
         Command::Ls(l) => {
-            let list_data = ListData { path: l.path };
+            let list_data = ListData {
+                path: l.path,
+                all: l.all,
+                long: l.long,
+            };
             list_data.list_options();
         }
 
