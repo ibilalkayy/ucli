@@ -1,5 +1,5 @@
 [package]
-name = "ucli"
+name = "younix"
 edition = "2024"
 version.workspace = true
 

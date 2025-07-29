@@ -8,9 +8,9 @@ use clap::{Parser, Subcommand};
 #[clap(
     author = "Bilal Khan",
     version,
-    about = "A collection of minimalist Unix command-line tools reimagined in Rust."
+    about = "A collection of minimalist Unix command-line tools again made in Rust."
 )]
-pub struct Ucli {
+pub struct Younix {
     #[clap(subcommand)]
     pub command: Command,
 }

@@ -1,7 +1,7 @@
 pub mod command;
 pub mod flags;
 
-use crate::command::command::{Command, Ucli};
+use crate::command::command::{Command, Younix};
 use clap::Parser;
 
 use cat::cat::CatData;
@@ -13,7 +13,7 @@ use view::view::ViewData;
 use wc::wc::WcData;
 
 fn handle_commands() {
-    let ucli = Ucli::parse();
+    let ucli = Younix::parse();
     match ucli.command {
         Command::Cat(i) => {
             let cat_data = CatData {
