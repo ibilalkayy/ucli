@@ -74,5 +74,8 @@ mod list_tests {
         list.list_options();
 
         assert!(Path::new(&file_path).exists());
+
+        fs::remove_file(&file_path).expect("Failed to remove test file");
+        fs::remove_dir(dir_name).expect("Failed to remove test directory");
     }
 }

@@ -37,7 +37,7 @@ pub mod cat {
 #[cfg(test)]
 mod cat_tests {
     use super::cat::CatData;
-    use std::fs::File;
+    use std::fs::{self, File};
     use std::io::Write;
     use std::path::PathBuf;
 
@@ -55,7 +55,9 @@ mod cat_tests {
         };
 
         let output = cat_data.cat_output();
-        assert_eq!(output, "Line 1\nLine 2")
+        assert_eq!(output, "Line 1\nLine 2");
+
+        fs::remove_file(&file_path).expect("Err: failed to remove a file");
     }
 
     #[test]
@@ -72,6 +74,8 @@ mod cat_tests {
         };
 
         let output = cat_data.cat_output();
-        assert_eq!(output, "1 Line 1\n2 Line 2")
+        assert_eq!(output, "1 Line 1\n2 Line 2");
+
+        fs::remove_file(&file_path).expect("Err: failed to remove a file");
     }
 }

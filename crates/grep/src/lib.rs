@@ -55,7 +55,11 @@ pub mod grep {
 #[cfg(test)]
 mod grep_tests {
     use super::grep::GrepData;
-    use std::{fs::File, io::Write, path::PathBuf};
+    use std::{
+        fs::{self, File},
+        io::Write,
+        path::PathBuf,
+    };
 
     #[test]
     fn test_find_file() {
@@ -74,6 +78,8 @@ mod grep_tests {
         };
 
         grep_data.grep_options();
+
+        fs::remove_file(&file_path).expect("Err: failed to remove a file");
     }
 
     #[test]
@@ -97,6 +103,8 @@ mod grep_tests {
             output,
             vec!["this is the file where it contains the search text"]
         );
+
+        fs::remove_file(&file_path).expect("Err: failed to remove a file");
     }
 
     #[test]
@@ -120,6 +128,8 @@ mod grep_tests {
             output,
             vec!["this is the file where it contains the search text"]
         );
+
+        fs::remove_file(&file_path).expect("Err: failed to remove a file");
     }
 
     #[test]
@@ -143,6 +153,8 @@ mod grep_tests {
             output,
             vec!["1 this is the file where it contains the search text"]
         );
+
+        fs::remove_file(&file_path).expect("Err: failed to remove a file");
     }
 
     #[test]
@@ -167,5 +179,7 @@ mod grep_tests {
             output,
             vec!["this line does not match", "another unrelated line"]
         );
+
+        fs::remove_file(&file_path).expect("Err: failed to remove a file");
     }
 }
