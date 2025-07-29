@@ -49,3 +49,30 @@ pub mod list {
         }
     }
 }
+
+#[cfg(test)]
+mod list_tests {
+    use super::list::ListData;
+    use std::fs::{self, File};
+    use std::path::Path;
+
+    #[test]
+    fn test_list_shows_created_file() {
+        let dir_name = "list_dir_test";
+        let file_name = "file.txt";
+        let file_path = format!("{}/{}", dir_name, file_name);
+
+        fs::create_dir_all(dir_name).expect("Failed to create test directory");
+        File::create(&file_path).expect("Failed to create test file");
+
+        let list = ListData {
+            path: Some(dir_name.to_string()),
+            all: false,
+            long: false,
+        };
+
+        list.list_options();
+
+        assert!(Path::new(&file_path).exists());
+    }
+}

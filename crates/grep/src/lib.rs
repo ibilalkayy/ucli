@@ -54,9 +54,8 @@ pub mod grep {
 
 #[cfg(test)]
 mod grep_tests {
+    use super::grep::GrepData;
     use std::{fs::File, io::Write, path::PathBuf};
-
-    use crate::grep::GrepData;
 
     #[test]
     fn test_find_file() {

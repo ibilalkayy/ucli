@@ -36,7 +36,7 @@ pub mod cat {
 
 #[cfg(test)]
 mod cat_tests {
-    use crate::cat::CatData;
+    use super::cat::CatData;
     use std::fs::File;
     use std::io::Write;
     use std::path::PathBuf;
