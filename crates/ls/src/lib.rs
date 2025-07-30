@@ -8,24 +8,37 @@ pub mod list {
     }
 
     impl ListData {
-        pub fn list_options(&self) {
+        pub fn list_output(&self) -> bool {
             match &self.path {
                 Some(dir_path) => {
-                    let paths =
-                        fs::read_dir(dir_path).expect("Err: failed to read the directory path");
+                    let paths = match fs::read_dir(dir_path) {
+                        Ok(p) => p,
+                        Err(_) => {
+                            eprintln!("Err: failed to read the directory path");
+                            return false;
+                        }
+                    };
 
                     for p in paths {
-                        let entry = p.unwrap();
+                        let entry = match p {
+                            Ok(e) => e,
+                            Err(_) => continue, // Skip unreadable entries
+                        };
+
                         let file_name = entry.file_name();
                         let name_str = file_name.to_string_lossy();
 
-                        // ✅ Skip hidden files unless `--all` is selected
+                        // Skip hidden files unless `--all` is selected
                         if !self.all && name_str.starts_with('.') {
                             continue;
                         }
 
                         if self.long {
-                            let metadata = entry.metadata().unwrap();
+                            let metadata = match entry.metadata() {
+                                Ok(m) => m,
+                                Err(_) => continue,
+                            };
+
                             let file_type = if metadata.is_dir() { "dir" } else { "file" };
                             let size = if metadata.is_file() {
                                 metadata.len().to_string()
@@ -35,17 +48,25 @@ pub mod list {
 
                             println!("{:<8} {:>8}  {}", file_type, size, name_str);
                         } else {
-                            // Normal short mode
                             print!("{:<15}", name_str);
                         }
                     }
 
                     if !self.long {
-                        println!(); // add newline if in short format
+                        println!();
                     }
+
+                    true
                 }
-                None => eprintln!("Err: file path has not been provided"),
+                None => {
+                    eprintln!("Err: file path has not been provided");
+                    false
+                }
             }
+        }
+
+        pub fn list_options(&self) {
+            let _ = self.list_output();
         }
     }
 }
@@ -58,7 +79,7 @@ mod list_tests {
 
     #[test]
     fn test_list_shows_created_file() {
-        let dir_name = "list_dir_test";
+        let dir_name = "list_dir_test1";
         let file_name = "file.txt";
         let file_path = format!("{}/{}", dir_name, file_name);
 
@@ -77,5 +98,27 @@ mod list_tests {
 
         fs::remove_file(&file_path).expect("Failed to remove test file");
         fs::remove_dir(dir_name).expect("Failed to remove test directory");
+    }
+
+    #[test]
+    fn test_show_hidden_files() {
+        let dir_name = "list_dir_test";
+        let file_name = ".gitignore";
+        let file_path = format!("{}/{}", dir_name, file_name);
+
+        fs::create_dir_all(dir_name).expect("Err: failed to create a directory");
+        File::create(&file_path).expect("Err: failed to create a file");
+
+        let list = ListData {
+            path: Some(dir_name.to_string()),
+            all: true,
+            long: false,
+        };
+
+        let output = list.list_output();
+        assert_eq!(output, true);
+
+        fs::remove_file(&file_path).expect("Err: failed to remove the file");
+        fs::remove_dir(dir_name).expect("Err: failed to remove the directory");
     }
 }
