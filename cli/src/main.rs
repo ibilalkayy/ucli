@@ -44,7 +44,10 @@ fn handle_commands() {
         }
 
         Command::View(v) => {
-            let view_data = ViewData { file: v.file };
+            let view_data = ViewData {
+                file: v.file,
+                lines: v.lines,
+            };
             view_data.view_options();
         }
 

@@ -122,42 +122,6 @@ mod list_tests {
         fs::remove_dir(dir_name).expect("Err: failed to remove the directory");
     }
 
-    // #[test]
-    // fn test_show_long_files() {
-    //     let parent_dir_name = "list_dir_test3";
-    //     let child_dir_name = "child_dir_test";
-    //     let dir_path = format!("{}/{}", parent_dir_name, child_dir_name);
-    //     let file_name = "file.txt";
-
-    //     match fs::create_dir_all(&dir_path) {
-    //         Ok(_) => {
-    //             let file_path = format!("{}/{}", parent_dir_name, file_name);
-    //             File::create(&file_path).expect("Err: failed to create a file");
-    //         }
-    //         Err(error) => eprintln!("Err: {}", error),
-    //     }
-
-    //     let paths = fs::read_dir(parent_dir_name).expect("Err: failed to read the directory");
-    //     for p in paths {
-    //         let entry = match p {
-    //             Ok(e) => e,
-    //             Err(_) => continue,
-    //         };
-
-    //         let metadata = entry.metadata().expect("Err: failed to get the metadata");
-    //         let file_type = if metadata.is_dir() { "dir" } else { "file" };
-    //     }
-
-    //     let list = ListData {
-    //         path: Some(parent_dir_name.to_string()),
-    //         all: false,
-    //         long: true,
-    //     };
-
-    //     let output = list.list_output();
-    //     assert_eq!(output, true);
-    // }
-
     #[test]
     fn test_long_output_shows_metadata() {
         let dir_name = "list_dir_test3";
