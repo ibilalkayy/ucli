@@ -22,7 +22,7 @@ pub mod list {
                     for p in paths {
                         let entry = match p {
                             Ok(e) => e,
-                            Err(_) => continue, // Skip unreadable entries
+                            Err(_) => continue,
                         };
 
                         let file_name = entry.file_name();
@@ -102,7 +102,7 @@ mod list_tests {
 
     #[test]
     fn test_show_hidden_files() {
-        let dir_name = "list_dir_test";
+        let dir_name = "list_dir_test2";
         let file_name = ".gitignore";
         let file_path = format!("{}/{}", dir_name, file_name);
 
@@ -120,5 +120,70 @@ mod list_tests {
 
         fs::remove_file(&file_path).expect("Err: failed to remove the file");
         fs::remove_dir(dir_name).expect("Err: failed to remove the directory");
+    }
+
+    // #[test]
+    // fn test_show_long_files() {
+    //     let parent_dir_name = "list_dir_test3";
+    //     let child_dir_name = "child_dir_test";
+    //     let dir_path = format!("{}/{}", parent_dir_name, child_dir_name);
+    //     let file_name = "file.txt";
+
+    //     match fs::create_dir_all(&dir_path) {
+    //         Ok(_) => {
+    //             let file_path = format!("{}/{}", parent_dir_name, file_name);
+    //             File::create(&file_path).expect("Err: failed to create a file");
+    //         }
+    //         Err(error) => eprintln!("Err: {}", error),
+    //     }
+
+    //     let paths = fs::read_dir(parent_dir_name).expect("Err: failed to read the directory");
+    //     for p in paths {
+    //         let entry = match p {
+    //             Ok(e) => e,
+    //             Err(_) => continue,
+    //         };
+
+    //         let metadata = entry.metadata().expect("Err: failed to get the metadata");
+    //         let file_type = if metadata.is_dir() { "dir" } else { "file" };
+    //     }
+
+    //     let list = ListData {
+    //         path: Some(parent_dir_name.to_string()),
+    //         all: false,
+    //         long: true,
+    //     };
+
+    //     let output = list.list_output();
+    //     assert_eq!(output, true);
+    // }
+
+    #[test]
+    fn test_long_output_shows_metadata() {
+        let dir_name = "list_dir_test3";
+        let file_name = "info.txt";
+        let file_path = format!("{}/{}", dir_name, file_name);
+
+        // Setup test directory and file
+        fs::create_dir_all(dir_name).expect("Failed to create test directory");
+        let mut file = File::create(&file_path).expect("Failed to create test file");
+        use std::io::Write;
+        writeln!(file, "Hello, world!").expect("Failed to write to test file");
+
+        let list = ListData {
+            path: Some(dir_name.to_string()),
+            all: false,
+            long: true,
+        };
+
+        // Capture the output
+        let output = std::panic::catch_unwind(|| list.list_output());
+
+        assert!(output.is_ok());
+        assert_eq!(output.unwrap(), true);
+
+        // Cleanup
+        fs::remove_file(&file_path).expect("Failed to remove test file");
+        fs::remove_dir(dir_name).expect("Failed to remove test directory");
     }
 }
