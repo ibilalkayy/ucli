@@ -52,7 +52,11 @@ fn handle_commands() {
         }
 
         Command::Sort(s) => {
-            let sort_data = SortData { file: s.file };
+            let sort_data = SortData {
+                file: s.file,
+                reverse: s.reverse,
+                number: s.number,
+            };
             sort_data.sort_options();
         }
 

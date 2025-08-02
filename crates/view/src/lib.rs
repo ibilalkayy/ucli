@@ -18,7 +18,7 @@ pub mod view {
                     }
                     Err(error) => eprintln!("Err: {}", error),
                 },
-                None => eprintln!("Err: file has been selected"),
+                None => eprintln!("Err: file has not been selected"),
             }
         }
     }
