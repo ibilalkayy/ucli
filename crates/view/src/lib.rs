@@ -49,7 +49,7 @@ mod view_tests {
 
         view.view_options();
 
-        let read_content = fs::read_to_string(&file_name).expect("Failed to read file");
+        let read_content = fs::read_to_string(&file_name).expect("Err: failed to read the file");
         assert_eq!(read_content, content);
 
         fs::remove_file(file_name).expect("Err: failed to remove the file");
