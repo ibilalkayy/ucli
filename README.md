@@ -19,6 +19,14 @@
 | `sort`  | Sort lines in a file                     |
 | `wc`    | Count lines, words, and bytes in a file  |
 
+### 📥 Installation
+
+You can install Younix directly from [crates.io](https://crates.io/crates/younix):
+
+```bash
+cargo install younix
+```
+
 ### 🔧 Example Usages
 
 ```bash
