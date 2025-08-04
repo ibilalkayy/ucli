@@ -17,7 +17,6 @@
 | `grep`  | Search for matching lines in a file      |
 | `view`  | View file content interactively (`less`) |
 | `sort`  | Sort lines in a file                     |
-| `tail`  | Show the last N lines of a file          |
 | `wc`    | Count lines, words, and bytes in a file  |
 
 ### 🔧 Example Usages
@@ -26,7 +25,6 @@
 younix cat file.txt
 younix ls -a
 younix grep "error" logs.txt -i -n
-younix tail logs.txt -n 10 -f
 younix wc file.txt -l -w -c
 ```
 
