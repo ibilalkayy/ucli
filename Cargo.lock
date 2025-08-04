@@ -53,14 +53,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "cat"
-version = "0.1.29"
-
-[[package]]
 name = "clap"
-version = "4.5.39"
+version = "4.5.42"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fd60e63e9be68e5fb56422e397cf9baddded06dae1d2e523401542383bc72a9f"
+checksum = "ed87a9d530bb41a67537289bafcac159cb3ee28460e0a4571123d2a778a6a882"
 dependencies = [
  "clap_builder",
  "clap_derive",
@@ -68,9 +64,9 @@ dependencies = [
 
 [[package]]
 name = "clap_builder"
-version = "4.5.39"
+version = "4.5.42"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "89cc6392a1f72bbeb820d71f32108f61fdaf18bc526e1d23954168a67759ef51"
+checksum = "64f4f3f3c77c94aff3c7e9aac9a2ca1974a5adf392a8bb751e827d6d127ab966"
 dependencies = [
  "anstream",
  "anstyle",
@@ -80,9 +76,9 @@ dependencies = [
 
 [[package]]
 name = "clap_derive"
-version = "4.5.32"
+version = "4.5.41"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "09176aae279615badda0765c0c0b3f6ed53f4709118af73cf4655d85d1530cd7"
+checksum = "ef4f52386a59ca4c860f7393bcf8abd8dfd91ecccc0f774635ff68e92eeef491"
 dependencies = [
  "heck",
  "proc-macro2",
@@ -92,19 +88,15 @@ dependencies = [
 
 [[package]]
 name = "clap_lex"
-version = "0.7.4"
+version = "0.7.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f46ad14479a25103f283c0f10005961cf086d8dc42205bb44c46ac563475dca6"
+checksum = "b94f61472cee1439c0b966b47e3aca9ae07e45d070759512cd390ea2bebc6675"
 
 [[package]]
 name = "colorchoice"
 version = "1.0.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b05b61dc5112cbb17e4b6cd61790d9845d13888356391624cbe7e41efeac1e75"
-
-[[package]]
-name = "grep"
-version = "0.1.29"
 
 [[package]]
 name = "heck"
@@ -117,10 +109,6 @@ name = "is_terminal_polyfill"
 version = "1.70.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7943c866cc5cd64cbc25b2e01621d07fa8eb2a1a23160ee81ce38704e97b8ecf"
-
-[[package]]
-name = "ls"
-version = "0.1.29"
 
 [[package]]
 name = "once_cell_polyfill"
@@ -147,10 +135,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "sort"
-version = "0.1.29"
-
-[[package]]
 name = "strsim"
 version = "0.11.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -158,9 +142,9 @@ checksum = "7da8b5736845d9f2fcb837ea5d9e2628564b3b043a70948a3f0b778838c5fb4f"
 
 [[package]]
 name = "syn"
-version = "2.0.101"
+version = "2.0.104"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8ce2b7fc941b3a24138a0a7cf8e858bfc6a992e7978a068a5c760deb0ed43caf"
+checksum = "17b6f705963418cdb9927482fa304bc562ece2fdd4f616084c50b7023b435a40"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -178,14 +162,6 @@ name = "utf8parse"
 version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "06abde3611657adf66d383f00b093d7faecc7fa57071cce2578660c9f1010821"
-
-[[package]]
-name = "view"
-version = "0.1.29"
-
-[[package]]
-name = "wc"
-version = "0.1.29"
 
 [[package]]
 name = "windows-sys"
@@ -261,14 +237,74 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec"
 
 [[package]]
+name = "xcat"
+version = "0.1.29"
+
+[[package]]
+name = "xcat"
+version = "0.1.29"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "31aec20c012fb09ded399372951ffab632652bb4b54da8c6f57bf657ac96ea07"
+
+[[package]]
+name = "ygrep"
+version = "0.1.29"
+
+[[package]]
+name = "ygrep"
+version = "0.1.29"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "94c4db6eb5c367ef12358fcd2fb9946e2bec856c986ddfb05083190935735cca"
+
+[[package]]
+name = "yls"
+version = "0.1.29"
+
+[[package]]
+name = "yls"
+version = "0.1.29"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "27180a32e7dfce7ceeca52774be2182b20c72dc92b4d839869f85dafac79c72b"
+
+[[package]]
 name = "younix"
 version = "0.1.29"
 dependencies = [
- "cat",
  "clap",
- "grep",
- "ls",
- "sort",
- "view",
- "wc",
+ "xcat 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ygrep 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
+ "yls 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ysort 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
+ "yview 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ywc 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
+
+[[package]]
+name = "ysort"
+version = "0.1.29"
+
+[[package]]
+name = "ysort"
+version = "0.1.29"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2d616e399b3facae5daf59113d4ac0f2ca78c8531ca68f1d7b4757668778125b"
+
+[[package]]
+name = "yview"
+version = "0.1.29"
+
+[[package]]
+name = "yview"
+version = "0.1.29"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2dc6724a2d97ff2b08fe4774276296ee8cb0bac665e181d00bfe3be68ee5f339"
+
+[[package]]
+name = "ywc"
+version = "0.1.29"
+
+[[package]]
+name = "ywc"
+version = "0.1.29"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9fd316fa99842a50e8196f974e257ae6adf395bff6cef569035dce6e6cb3689e"
