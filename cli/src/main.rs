@@ -8,7 +8,6 @@ use cat::cat::CatData;
 use grep::grep::GrepData;
 use ls::list::ListData;
 use sort::sort::SortData;
-use tail::tail::TailData;
 use view::view::ViewData;
 use wc::wc::WcData;
 
@@ -60,13 +59,13 @@ fn handle_commands() {
             sort_data.sort_options();
         }
 
-        Command::Tail(t) => {
-            let tail_data = TailData { path: t.file };
-            tail_data.tail_options();
-        }
-
         Command::Wc(w) => {
-            let wc_data = WcData { file: w.file };
+            let wc_data = WcData {
+                file: w.file,
+                lines: w.lines,
+                words: w.words,
+                bytes: w.bytes,
+            };
             wc_data.wc_options();
         }
     }

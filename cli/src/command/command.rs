@@ -1,6 +1,5 @@
 use crate::flags::{
-    cat::CatFlags, grep::GrepFlags, ls::ListFlags, sort::SortFlags, tail::TailFlags,
-    view::ViewFlags, wc::WcFlags,
+    cat::CatFlags, grep::GrepFlags, ls::ListFlags, sort::SortFlags, view::ViewFlags, wc::WcFlags,
 };
 use clap::{Parser, Subcommand};
 
@@ -31,9 +30,6 @@ pub enum Command {
 
     /// Sort the lines
     Sort(SortFlags),
-
-    /// Last N lines of a file
-    Tail(TailFlags),
 
     /// Count lines, words, bytes
     Wc(WcFlags),

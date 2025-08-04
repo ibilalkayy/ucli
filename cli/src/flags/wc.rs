@@ -2,19 +2,19 @@ use clap::Parser;
 
 #[derive(Debug, Parser)]
 pub struct WcFlags {
-    /// Output path
+    /// File path to target for counting
     #[clap(short, long, value_name = "FILE")]
-    pub file: String,
+    pub file: Option<String>,
 
     /// Count lines
-    #[clap(long)]
+    #[clap(short, long)]
     pub lines: bool,
 
     /// Count words
-    #[clap(long)]
+    #[clap(short, long)]
     pub words: bool,
 
     /// Count bytes
-    #[clap(long)]
+    #[clap(short, long)]
     pub bytes: bool,
 }

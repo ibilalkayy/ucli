@@ -9,6 +9,5 @@ cat = { path = "../crates/cat" }
 ls = { path = "../crates/ls" }
 grep = { path = "../crates/grep" }
 sort = { path = "../crates/sort" }
-tail = { path = "../crates/tail" }
 view = { path = "../crates/view" }
 wc = { path = "../crates/wc" }
