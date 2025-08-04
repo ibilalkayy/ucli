@@ -1,6 +1,13 @@
 [package]
 name = "grep"
 edition = "2024"
+description.workspace = true
+repository.workspace = true
 version.workspace = true
+license.workspace = true
+readme.workspace = true
+categories.workspace = true
+keywords.workspace = true
+exclude.workspace = true
 
 [dependencies]

@@ -6,4 +6,12 @@ members = ["cli", "crates/*"]
 clap = { version = "4.5.39", features = ["derive"] }
 
 [workspace.package]
-version = "0.1.28"
+description = "A collection of minimalist Unix command-line tools again made in Rust."
+repository = "https://github.com/ibilalkayy/younix"
+version = "0.1.29"
+edition = "2024"
+license = "Apache-2.0"
+readme = "README.md"
+categories = ["command-line-utilities"]
+keywords = ["unix", "cat", "view", "grep"]
+exclude = ["target/*"]
