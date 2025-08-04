@@ -1,5 +1,5 @@
 [package]
-name = "grep"
+name = "ygrep"
 edition = "2024"
 description.workspace = true
 repository.workspace = true
