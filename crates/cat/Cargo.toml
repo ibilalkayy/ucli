@@ -1,5 +1,5 @@
 [package]
-name = "cat"
+name = "xcat"
 edition = "2024"
 description.workspace = true
 repository.workspace = true
