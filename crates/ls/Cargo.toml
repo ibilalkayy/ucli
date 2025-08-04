@@ -1,5 +1,5 @@
 [package]
-name = "ls"
+name = "yls"
 edition = "2024"
 description.workspace = true
 repository.workspace = true
