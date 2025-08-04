@@ -1,5 +1,5 @@
 [package]
-name = "wc"
+name = "ywc"
 edition = "2024"
 description.workspace = true
 repository.workspace = true
