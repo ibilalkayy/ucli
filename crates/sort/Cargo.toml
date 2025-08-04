@@ -1,5 +1,5 @@
 [package]
-name = "sort"
+name = "ysort"
 edition = "2024"
 description.workspace = true
 repository.workspace = true
