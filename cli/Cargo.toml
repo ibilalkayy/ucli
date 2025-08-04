@@ -12,9 +12,9 @@ exclude.workspace = true
 
 [dependencies]
 clap.workspace = true
-cat = { path = "../crates/cat" }
-ls = { path = "../crates/ls" }
-grep = { path = "../crates/grep" }
-sort = { path = "../crates/sort" }
-view = { path = "../crates/view" }
-wc = { path = "../crates/wc" }
+xcat = "0.1.29"
+yls = "0.1.29"
+ygrep = "0.1.29"
+ysort = "0.1.29"
+yview = "0.1.29"
+ywc = "0.1.29"
