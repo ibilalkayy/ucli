@@ -237,46 +237,28 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec"
 
 [[package]]
-name = "xcat"
-version = "0.1.29"
-
-[[package]]
-name = "xcat"
-version = "0.1.29"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "31aec20c012fb09ded399372951ffab632652bb4b54da8c6f57bf657ac96ea07"
-
-[[package]]
-name = "ygrep"
+name = "ycat"
 version = "0.1.29"
 
 [[package]]
 name = "ygrep"
 version = "0.1.29"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "94c4db6eb5c367ef12358fcd2fb9946e2bec856c986ddfb05083190935735cca"
 
 [[package]]
 name = "yls"
 version = "0.1.29"
-
-[[package]]
-name = "yls"
-version = "0.1.29"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "27180a32e7dfce7ceeca52774be2182b20c72dc92b4d839869f85dafac79c72b"
 
 [[package]]
 name = "younix"
 version = "0.1.29"
 dependencies = [
  "clap",
- "xcat 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
- "ygrep 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
- "yls 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
- "ysort 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
- "yview 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
- "ywc 0.1.29 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ycat",
+ "ygrep",
+ "yls",
+ "ysort",
+ "yview",
+ "ywc",
 ]
 
 [[package]]
@@ -284,27 +266,9 @@ name = "ysort"
 version = "0.1.29"
 
 [[package]]
-name = "ysort"
-version = "0.1.29"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2d616e399b3facae5daf59113d4ac0f2ca78c8531ca68f1d7b4757668778125b"
-
-[[package]]
 name = "yview"
-version = "0.1.29"
-
-[[package]]
-name = "yview"
-version = "0.1.29"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2dc6724a2d97ff2b08fe4774276296ee8cb0bac665e181d00bfe3be68ee5f339"
-
-[[package]]
-name = "ywc"
 version = "0.1.29"
 
 [[package]]
 name = "ywc"
 version = "0.1.29"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9fd316fa99842a50e8196f974e257ae6adf395bff6cef569035dce6e6cb3689e"
