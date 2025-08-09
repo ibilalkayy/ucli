@@ -1,13 +1,12 @@
 [package]
 name = "ysort"
-edition = "2024"
-description.workspace = true
-repository.workspace = true
+edition.workspace = true
+description = "The sort command of the Younix application"
+repository = "https://github.com/ibilalkayy/younix/tree/main/crates/sort"
 version.workspace = true
 license.workspace = true
-readme.workspace = true
+readme = "README.md"
 categories.workspace = true
 keywords.workspace = true
-exclude.workspace = true
 
 [dependencies]
