@@ -4,7 +4,7 @@ pub mod flags;
 use crate::command::command::{Command, Younix};
 use clap::Parser;
 
-use xcat::cat::CatData;
+use ycat::cat::CatData;
 use ygrep::grep::GrepData;
 use yls::list::ListData;
 use ysort::sort::SortData;

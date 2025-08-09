@@ -7,7 +7,7 @@ use clap::{Parser, Subcommand};
 #[clap(
     author = "Bilal Khan",
     version,
-    about = "A collection of minimalist Unix command-line tools again made in Rust."
+    about = "A collection of minimalist Unix command-line tools made in Rust."
 )]
 pub struct Younix {
     #[clap(subcommand)]

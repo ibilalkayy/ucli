@@ -1,6 +1,6 @@
 [package]
 name = "younix"
-edition = "2024"
+edition.workspace = true
 description.workspace = true
 repository.workspace = true
 version.workspace = true
@@ -8,11 +8,10 @@ license.workspace = true
 readme.workspace = true
 categories.workspace = true
 keywords.workspace = true
-exclude.workspace = true
 
 [dependencies]
 clap.workspace = true
-xcat = "0.1.29"
+ycat = "0.1.29"
 yls = "0.1.29"
 ygrep = "0.1.29"
 ysort = "0.1.29"
