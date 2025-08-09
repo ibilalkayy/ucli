@@ -1,13 +1,11 @@
 [package]
-name = "xcat"
-edition = "2024"
-description.workspace = true
-repository.workspace = true
+name = "ycat"
+edition.workspace = true
+description = "The cat command of the Younix application"
+repository = "https://github.com/ibilalkayy/younix/tree/main/crates/cat"
 version.workspace = true
 license.workspace = true
-readme.workspace = true
+readme = "README.md"
 categories.workspace = true
-keywords.workspace = true
-exclude.workspace = true
 
 [dependencies]
