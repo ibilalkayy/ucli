@@ -1,10 +1,11 @@
 use clap::Parser;
+use std::path::PathBuf;
 
 #[derive(Debug, Parser)]
 pub struct GrepFlags {
     /// File to search
     #[clap()]
-    pub file: String,
+    pub file: PathBuf,
 
     /// The pattern to search for
     #[clap(short, long)]

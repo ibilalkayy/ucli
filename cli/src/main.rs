@@ -4,12 +4,12 @@ pub mod flags;
 use crate::command::command::{Command, Younix};
 use clap::Parser;
 
-use ycat::cat::CatData;
-use ygrep::grep::GrepData;
-use yls::list::ListData;
-use ysort::sort::SortData;
-use yview::view::ViewData;
-use ywc::wc::WcData;
+use ycat::CatData;
+use ygrep::GrepData;
+use yls::ListData;
+use ysort::SortData;
+use yview::ViewData;
+use ywc::WcData;
 
 fn handle_commands() {
     let ucli = Younix::parse();

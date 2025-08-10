@@ -1,10 +1,11 @@
 use clap::Parser;
+use std::path::PathBuf;
 
 #[derive(Debug, Parser)]
 pub struct WcFlags {
     /// File path to target for counting
     #[clap(short, long, value_name = "FILE")]
-    pub file: Option<String>,
+    pub file: Option<PathBuf>,
 
     /// Count lines
     #[clap(short, long)]
