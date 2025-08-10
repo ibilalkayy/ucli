@@ -9,7 +9,7 @@ clap = { version = "4.5.39", features = ["derive"] }
 description = "A collection of minimalist Unix command-line tools made in Rust."
 edition = "2024"
 repository = "https://github.com/ibilalkayy/younix"
-version = "0.1.30"
+version = "0.1.31"
 license = "Apache-2.0"
 readme = "README.md"
 categories = ["command-line-utilities"]
