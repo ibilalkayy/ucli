@@ -10,3 +10,4 @@ categories.workspace = true
 keywords.workspace = true
 
 [dependencies]
+tempfile.workspace = true
