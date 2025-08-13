@@ -11,9 +11,9 @@ keywords.workspace = true
 
 [dependencies]
 clap.workspace = true
-ycat = { path = "../crates/cat" }
-yls = { path = "../crates/ls" }
-ygrep = { path = "../crates/grep" }
-ysort = { path = "../crates/sort" }
-yview = { path = "../crates/view" }
-ywc = { path = "../crates/wc" }
+ycat = "0.1.32"
+yls = "0.1.32"
+ygrep = "0.1.32"
+ysort = "0.1.32"
+yview = "0.1.32"
+ywc = "0.1.32"
