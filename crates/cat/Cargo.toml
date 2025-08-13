@@ -9,3 +9,4 @@ readme = "./README.md"
 categories.workspace = true
 
 [dependencies]
+tempfile.workspace = true
