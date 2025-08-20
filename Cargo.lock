@@ -346,109 +346,109 @@ dependencies = [
 
 [[package]]
 name = "ycat"
-version = "0.1.32"
+version = "0.1.34"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "222908eac57e2355ef396593c2052a45f3de6af00a64fbfd6d1793e7c9fc4c79"
 dependencies = [
  "tempfile",
 ]
 
 [[package]]
 name = "ycat"
-version = "0.1.32"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "21b0384d97d082ca285f6977c5dbea1b753445f3b457041a82030d6617193af5"
+version = "0.1.36"
 dependencies = [
  "tempfile",
 ]
 
 [[package]]
 name = "ygrep"
-version = "0.1.32"
+version = "0.1.34"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "72c713dd90e8243f5b5266624167b1290dcf02ad32762eed6616c10c4e38b711"
 dependencies = [
  "tempfile",
 ]
 
 [[package]]
 name = "ygrep"
-version = "0.1.32"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b62731f89e8f31bbd118380dc38ed5c2235983319d77dd171b3b1e1be4f7e8fb"
+version = "0.1.36"
 dependencies = [
  "tempfile",
 ]
 
 [[package]]
 name = "yls"
-version = "0.1.32"
+version = "0.1.34"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7227eb04ff2f20362cc80759bb659b2e75b5fddc11c71efbe452d608d8071609"
 dependencies = [
  "tempfile",
 ]
 
 [[package]]
 name = "yls"
-version = "0.1.32"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d9a4d65402e6844229f8b660a2f2dff69225497e3479785596c11899a4fca2bd"
+version = "0.1.36"
 dependencies = [
  "tempfile",
 ]
 
 [[package]]
 name = "younix"
-version = "0.1.32"
+version = "0.1.36"
 dependencies = [
  "clap",
- "ycat 0.1.32 (registry+https://github.com/rust-lang/crates.io-index)",
- "ygrep 0.1.32 (registry+https://github.com/rust-lang/crates.io-index)",
- "yls 0.1.32 (registry+https://github.com/rust-lang/crates.io-index)",
- "ysort 0.1.32 (registry+https://github.com/rust-lang/crates.io-index)",
- "yview 0.1.32 (registry+https://github.com/rust-lang/crates.io-index)",
- "ywc 0.1.32 (registry+https://github.com/rust-lang/crates.io-index)",
+ "ycat 0.1.34",
+ "ygrep 0.1.34",
+ "yls 0.1.34",
+ "ysort 0.1.34",
+ "yview 0.1.34",
+ "ywc 0.1.34",
 ]
 
 [[package]]
 name = "ysort"
-version = "0.1.32"
+version = "0.1.34"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4936410262a2398db1c9c77fbaa4242d85cddffd0f8080c347b142c87eda6746"
 dependencies = [
  "tempfile",
 ]
 
 [[package]]
 name = "ysort"
-version = "0.1.32"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eadc92a23ffc231e0cfdf62c7b61c0fbdcf6e469019aa735f9a3ea3e5e32c2a9"
+version = "0.1.36"
 dependencies = [
  "tempfile",
 ]
 
 [[package]]
 name = "yview"
-version = "0.1.32"
+version = "0.1.34"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3114591a32176c654b44a9c03157761e5871d4971feb6eb65b793cd32c9a7fc0"
 dependencies = [
  "tempfile",
 ]
 
 [[package]]
 name = "yview"
-version = "0.1.32"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "55afff19f749dbc5d5275ac223d76d18c0a5cebd8937c8741f59182b32c78fe8"
+version = "0.1.36"
 dependencies = [
  "tempfile",
 ]
 
 [[package]]
 name = "ywc"
-version = "0.1.32"
+version = "0.1.34"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a3830737341d15cea12db72b11a0def3aece0e9b71849d9fe5d6e00f253377df"
 dependencies = [
  "tempfile",
 ]
 
 [[package]]
 name = "ywc"
-version = "0.1.32"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a0f791e8fdefdd47f89a69601814af252431e57eb0c66496565f2d3921c5a4a7"
+version = "0.1.36"
 dependencies = [
  "tempfile",
 ]
