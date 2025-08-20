@@ -1,19 +1,18 @@
 [package]
 name = "younix"
 edition.workspace = true
-description.workspace = true
+description = "A collection of minimalist Unix command-line tools made in Rust."
 repository.workspace = true
 version.workspace = true
 license.workspace = true
-readme.workspace = true
-categories.workspace = true
+categories = ["command-line-utilities"]
 keywords.workspace = true
 
 [dependencies]
 clap.workspace = true
-ycat = "0.1.32"
-yls = "0.1.32"
-ygrep = "0.1.32"
-ysort = "0.1.32"
-yview = "0.1.32"
-ywc = "0.1.32"
+ycat = "0.1.34"
+yls = "0.1.34"
+ygrep = "0.1.34"
+ysort = "0.1.34"
+yview = "0.1.34"
+ywc = "0.1.34"
