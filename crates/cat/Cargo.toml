@@ -2,11 +2,11 @@
 name = "ycat"
 edition.workspace = true
 description = "The cat command of the Younix application"
-repository = "https://github.com/ibilalkayy/younix/tree/main/crates/cat"
+repository.workspace = true
 version.workspace = true
 license.workspace = true
-readme = "./README.md"
 categories.workspace = true
+keywords.workspace = true
 
 [dependencies]
 tempfile.workspace = true
