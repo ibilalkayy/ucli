@@ -2,11 +2,10 @@
 name = "ysort"
 edition.workspace = true
 description = "The sort command of the Younix application"
-repository = "https://github.com/ibilalkayy/younix/tree/main/crates/sort"
+repository.workspace = true
 version.workspace = true
 license.workspace = true
-readme = "./README.md"
-categories.workspace = true
+categories = ["command-line-utilities"]
 keywords.workspace = true
 
 [dependencies]
