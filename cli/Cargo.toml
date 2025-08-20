@@ -5,6 +5,7 @@ description = "A collection of minimalist Unix command-line tools made in Rust."
 repository.workspace = true
 version.workspace = true
 license.workspace = true
+readme.workspace = true
 categories = ["command-line-utilities"]
 keywords.workspace = true
 
